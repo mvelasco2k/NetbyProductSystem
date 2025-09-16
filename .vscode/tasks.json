@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run ProductManagment",
+      "type": "shell",
+      "command": "dotnet run --project ${workspaceFolder}/ProductManagment/ProductManagment.csproj",
+      "isBackground": true,
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Run TransactionManagment",
+      "type": "shell",
+      "command": "dotnet run --project ${workspaceFolder}/TransactionManagment/TransactionManagment.csproj",
+      "isBackground": true,
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Run Angular Frontend",
+      "type": "shell",
+      "command": "ng serve",
+      "options": {
+        "cwd": "${workspaceFolder}/ProductSystem"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "fileLocation": ["relative", "${workspaceFolder}/ProductSystem/src"],
+        "pattern": {
+          "regexp": "."
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": "Compiled successfully."
+        }
+      }
+    }
+  ]
+}

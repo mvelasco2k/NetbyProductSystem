@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Launch All",
+      "configurations": ["TransactionManagment", "ProductManagment", "Run Angular Frontend", "ProductSystem"]
+    }
+  ],
+  "configurations": [
+    {
+      "name": "ProductManagment",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/ProductManagment/bin/Debug/net8.0/ProductManagment.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/ProductManagment",
+      "stopAtEntry": false
+    },
+    {
+      "name": "TransactionManagment",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/TransactionManagment/bin/Debug/net8.0/TransactionManagment.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/TransactionManagment",
+      "stopAtEntry": false
+    },
+    {
+      "name": "Run Angular Frontend",
+      "type": "node-terminal",
+      "request": "launch",
+      "preLaunchTask": "Run Angular Frontend"
+    },
+    {
+      "name": "ProductSystem",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}/ProductSystem/src",
+      "preLaunchTask": "Run Angular Frontend"
+    }
+  ]
+}
