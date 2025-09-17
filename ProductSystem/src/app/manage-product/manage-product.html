@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="w-50">
+            <div class="mb-3 align-items-center">
+                <label for="nombre" class="form-label">Nombre del Producto*:</label>
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre">
+            </div>
+            <div class="mb-3 align-items-center">
+                <label for="precio" class="form-label">Precio del Producto*:</label>
+                <input type="text" class="form-control" id="precio" [(ngModel)]="precio">
+            </div>
+            <div class="mb-3 align-items-center">
+                <label for="descripcion" class="form-label">Descripción del Producto:</label>
+                <input type="text" class="form-control" id="descripcion" [(ngModel)]="descripcion">
+            </div>
+            <div class="mb-3 align-items-center">
+                <label for="stock" class="form-label">Stock inicial del Producto:</label>
+                <input type="text" class="form-control" id="stock" [(ngModel)]="stock">
+            </div>
+            <div class="mb-3 align-items-center">
+                <label for="imagen" class="form-label">Url de la imagen del Producto:</label>
+                <input type="text" class="form-control" id="imagen" [(ngModel)]="imagen">
+            </div>
+            <button class="btn btn-primary" (click)="saveProduct()">Guardar</button>
+        </div>
+
+    </div>
+</div>

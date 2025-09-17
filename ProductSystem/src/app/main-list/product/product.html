@@ -1,0 +1,14 @@
+<div class="mt-4 mx-4">
+    <table mat-table class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+            <th mat-header-cell > No. </th>
+            <td mat-cell> {{getTitle}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell > Name </th>
+            <td mat-cell > {{getPrice}} </td>
+        </ng-container>
+    </table>
+</div>
