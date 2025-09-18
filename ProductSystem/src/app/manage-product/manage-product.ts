@@ -30,7 +30,7 @@ export class ManageProduct {
           this.producto = producto;
         },
         error: (error) => {
-          alert('Error al traer el producto: ' + error);
+          alert('Error al traer el producto: ' + error.error);
           this.router.navigate(['/']);
         }
       });
@@ -63,7 +63,7 @@ export class ManageProduct {
         this.router.navigate(['/']);
       },
       error: (error) => {
-        alert('Error al crear el producto: ' + error);
+        alert('Error al crear el producto: ' + error.error);
       }
     });
   }
@@ -85,7 +85,7 @@ export class ManageProduct {
         this.router.navigate(['/']);
       },
       error: (error) => {
-        alert('Error al editar el producto: ' + error);
+        alert('Error al editar el producto: ' + error.error);
       }
     });
   }

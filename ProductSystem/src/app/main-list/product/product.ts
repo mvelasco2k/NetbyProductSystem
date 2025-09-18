@@ -11,7 +11,7 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './product.css'
 })
 export class Product {
-  
+
 
   productos: Producto[] = [];
   constructor(private productsService: ProductsService, private router: Router) { }
@@ -45,14 +45,33 @@ export class Product {
     });
   }
 
-  venderProducto(arg0: number) {
-    throw new Error('Method not implemented.');
+  venderProducto(id: number) {
+    this.router.navigate(['manage-transactions', 'VENTA', id]);
   }
-  comprarProducto(_t16: Producto) {
-    throw new Error('Method not implemented.');
+  comprarProducto(id: number) {
+    this.router.navigate(['manage-transactions', 'COMPRA', id]);
   }
 
   trackByProductId(index: number, product: any): number {
     return product.id;
+  }
+
+  ///PAGINATION 
+  currentPage: number = 1;
+  itemsPerPage: number = 5;
+
+  get paginatedProducts() {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    return this.productos.slice(start, start + this.itemsPerPage);
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.productos.length / this.itemsPerPage);
+  }
+
+  changePage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
   }
 }

@@ -6,7 +6,6 @@ import { ManageTransactions } from './manage-transactions/manage-transactions';
 export const routes: Routes = [
     {path:'', component: MainList}, //localhost:4200/
     {path:'manage-product', component: ManageProduct},
-    {path:'manage-transactions/compra/:id', component: ManageTransactions},
-    {path:'manage-transactions/venta/:id', component: ManageTransactions},
+    {path:'manage-transactions/:transaction/:id', component: ManageTransactions},
     {path:'manage-product/:id', component: ManageProduct }
 ];

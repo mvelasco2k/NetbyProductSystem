@@ -20,7 +20,6 @@ export class ProductsService {
   }
 
   createProduct(producto: NewProducto): Observable<Producto> {
-    console.log('Creando producto:', producto);
     return this.http.post<Producto>(this.apiUrl+'CreateProduct', producto);
   }
 

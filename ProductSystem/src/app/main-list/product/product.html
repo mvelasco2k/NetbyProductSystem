@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of productos; trackBy: trackByProductId">
+                <tr *ngFor="let product of paginatedProducts; trackBy: trackByProductId">
                     <td>
                         <button (click)="editarProducto(product)" class="btn btn-sm btn-primary me-2"
                             aria-label="Editar">
@@ -29,7 +29,7 @@
                     <td>${{ product.precio }}</td>
                     <td>{{ product.stock }}</td>
                     <td>
-                        <button (click)="comprarProducto(product)" class="btn btn-sm btn-success me-2"
+                        <button (click)="comprarProducto(product.id)" class="btn btn-sm btn-success me-2"
                             aria-label="Compra">Compra
                             <i class="bi bi-cart-plus"></i>
                         </button>
@@ -41,5 +41,19 @@
                 </tr>
             </tbody>
         </table>
+        <nav class="d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentPage === 1">
+                    <button class="page-link" (click)="changePage(currentPage - 1)">Anterior</button>
+                </li>
+                <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index"
+                    [class.active]="currentPage === i + 1">
+                    <button class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</button>
+                </li>
+                <li class="page-item" [class.disabled]="currentPage === totalPages">
+                    <button class="page-link" (click)="changePage(currentPage + 1)">Siguiente</button>
+                </li>
+            </ul>
+        </nav>
     </ul>
 </div>
