@@ -9,6 +9,7 @@
                     <th>Categoría</th>
                     <th>Precio</th>
                     <th>Stock Actual</th>
+                    <th>Transacciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,7 +19,7 @@
                             aria-label="Editar">
                             <i class="bi bi-pencil"></i>
                         </button>
-                        <button (click)="eliminarProducto(product)" class="btn btn-sm btn-danger" aria-label="Eliminar">
+                        <button (click)="eliminarProducto(product.id)" class="btn btn-sm btn-danger" aria-label="Eliminar">
                             <i class="bi bi-trash"></i>
                         </button>
                     </td>
@@ -27,6 +28,16 @@
                     <td>{{ product.category.nombre }}</td>
                     <td>${{ product.precio }}</td>
                     <td>{{ product.stock }}</td>
+                    <td>
+                        <button (click)="comprarProducto(product)" class="btn btn-sm btn-success me-2"
+                            aria-label="Compra">Compra
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+                        <button (click)="venderProducto(product.id)" class="btn btn-sm btn-warning" aria-label="Venta">
+                            Venta
+                            <i class="bi bi-currency-dollar"></i>
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

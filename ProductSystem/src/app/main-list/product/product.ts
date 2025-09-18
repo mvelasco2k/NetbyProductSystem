@@ -11,6 +11,7 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './product.css'
 })
 export class Product {
+  
 
   productos: Producto[] = [];
   constructor(private productsService: ProductsService, private router: Router) { }
@@ -29,7 +30,25 @@ export class Product {
   editarProducto(producto: Producto) {
     this.router.navigate(['manage-product', producto.id]);
   }
-  eliminarProducto(_t15: Producto) {
+
+  eliminarProducto(id: number) {
+    const confirmado = window.confirm('¿Está seguro de que desea eliminar este producto?');
+    if (!confirmado) return;
+    this.productsService.deleteProduct(id).subscribe({
+      next: () => {
+        alert('Producto eliminado');
+        this.productos = this.productos.filter(p => p.id !== id);
+      },
+      error: (err) => {
+        console.error('Error al eliminar producto:', err);
+      }
+    });
+  }
+
+  venderProducto(arg0: number) {
+    throw new Error('Method not implemented.');
+  }
+  comprarProducto(_t16: Producto) {
     throw new Error('Method not implemented.');
   }
 
