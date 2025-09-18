@@ -20,12 +20,12 @@
       "type": "shell",
       "command": "ng serve",
       "options": {
-        "cwd": "${workspaceFolder}/ProductSystem"
+        "cwd": "${workspaceFolder}/AngularFrontend"
       },
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
-        "fileLocation": ["relative", "${workspaceFolder}/ProductSystem/src"],
+        "fileLocation": ["relative", "${workspaceFolder}/AngularFrontend"],
         "pattern": {
           "regexp": "."
         },

@@ -1,13 +1,34 @@
 <div class="mt-4 mx-4">
     <ul class="list-group">
-        @for(product of productos; track product.id) {
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-                <h6>{{ product.nombre }}</h6>
-                <small class="text-muted">{{ product.descripcion }}</small>
-            </div>
-            <span class="badge bg-primary rounded-pill">${{ product.precio }}</span>
-        </li>
-        }
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Stock Actual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of productos; trackBy: trackByProductId">
+                    <td>
+                        <button (click)="editarProducto(product)" class="btn btn-sm btn-primary me-2"
+                            aria-label="Editar">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button (click)="eliminarProducto(product)" class="btn btn-sm btn-danger" aria-label="Eliminar">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                    <td>{{ product.nombre }}</td>
+                    <td>{{ product.descripcion }}</td>
+                    <td>{{ product.category.nombre }}</td>
+                    <td>${{ product.precio }}</td>
+                    <td>{{ product.stock }}</td>
+                </tr>
+            </tbody>
+        </table>
     </ul>
 </div>
