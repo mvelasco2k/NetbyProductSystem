@@ -11,6 +11,7 @@ export class ManageTransactions {
   saveTransaction() {
     alert('Transacción guardada: ' + this.detalle);
   }
+  typeTransaction: string = ''; // o 'Venta'
   productName: string = '';
   cantidad: number = 0.0;
   precioUnitario: number = 0.0;
@@ -19,6 +20,6 @@ export class ManageTransactions {
   }
 
   get detalle(): string {
-    return `Compra/Venta de ${this.cantidad} unidades de ${this.productName}`;
+    return `${this.typeTransaction} de ${this.cantidad} unidades de ${this.productName}`;
   }
 }
