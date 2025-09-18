@@ -42,6 +42,7 @@ Frontend: Angular 20.1.1 (lógica de componentes)
   1. Ejecutar individualmente el proyecto mediante el comando ng serve
   2. Verificar que está ubicado en la carpeta ProductSystem
   3. Se adicionan las evidencias de las pantallas
+  4. Cuenta con validaciones de stock, datos mal ingresados y errores inesperados
 
 **EVIDENCIAS FRONT**
   - Pantalla principal del listado de productos (paginado por cada 5 elementos)
