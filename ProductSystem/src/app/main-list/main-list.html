@@ -1,7 +1,7 @@
-<div class="section">
+<div class="section my-4">
     <h1 class="text-center">{{titleSystem}}</h1>
     <div class="d-flex justify-content-between align-items-center">
-        <button class="btn btn-primary me-2 mx-4 mt-4" (click)="addProduct()">Nuevo Producto</button>
+        <button class="btn btn-primary me-2 mx-4 mt-4" [routerLink]="['manage-product']">Nuevo Producto</button>
         <button class="btn btn-success mx-4 mt-4" (click)="newTransaction()">Nueva Transacción</button>
     </div>
     <app-product></app-product>

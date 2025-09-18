@@ -1,26 +1,42 @@
-// export class Producto {
-//   constructor(
-//     public id: number,
-//     public nombre: string,
-//     public descripcion: string,
-//     public imagen: string,
-//     public precio: number,
-//     public stock: number
-//   ) {}
-// }
-
-export interface Categoria {
-  id: number;
-  nombre: string;
+export class Categoria {
+  constructor(
+    public id: number,
+    public nombre: string
+  ) {}
 }
 
-export interface Producto {
-  id: number;
-  nombre: string;
-  descripcion: string;
-  idCategory: number;
-  imagen: string;
-  precio: number;
-  stock: number;
-  category: Categoria;
-}
+export class Producto {
+  constructor(
+    public id: number,
+    public nombre: string,
+    public descripcion: string,
+    public idCategory: number,
+    public imagen: string,
+    public precio: number,
+    public stock: number,
+    public category: Categoria
+  ) {}
+}     
+
+export class NewProducto {
+  constructor(
+    public nombre: string,
+    public descripcion: string,
+    public idCategory: number,
+    public imagen: string,
+    public precio: number,
+    public stock: number
+  ) {}
+}    
+
+export class EditProducto {
+  constructor(
+    public id: number,
+    public nombre: string,
+    public descripcion: string,
+    public idCategory: number,
+    public imagen: string,
+    public precio: number,
+    public stock: number
+  ) {}
+}    

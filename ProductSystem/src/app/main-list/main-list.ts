@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { Product } from "./product/product";
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-main-list',
-  imports: [Product],
+  imports: [Product, RouterModule],
   templateUrl: './main-list.html',
   styleUrl: './main-list.css'
 })
 export class MainList {
+
+  constructor(private router: Router) { }
+
   newTransaction() {
-    alert('Nueva transacción iniciada');
+    this.router.navigate(['manage-transactions']);
   }
   addProduct() {
-    alert('Nuevo producto añadido');
+    this.router.navigate(['manage-product']);
   }
   protected readonly titleSystem = "Sistema de Gestión de Productos";
 }
